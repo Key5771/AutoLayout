@@ -22,9 +22,9 @@ class ViewController: UIViewController {
         
         self.view.addSubview(box)
         box.backgroundColor = UIColor(displayP3Red: 252/256, green: 251/256, blue: 234/256, alpha: 1.0)
-        box.snp.makeConstraints { (make) in
-            make.width.height.equalTo(self.view)
-            make.center.equalTo(self.view)
+        box.snp.makeConstraints {
+            $0.width.height.equalTo(self.view)
+            $0.center.equalTo(self.view)
         }
         
         self.view.addSubview(titleLabel)
@@ -33,21 +33,21 @@ class ViewController: UIViewController {
         
         let size = self.view.frame.height * 0.1
         
-        titleLabel.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(size)
-            make.leading.equalToSuperview().offset(30)
-            make.trailing.equalToSuperview().offset(-30)
+        titleLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(size)
+            $0.leading.equalToSuperview().offset(30)
+            $0.trailing.equalToSuperview().offset(-30)
         }
         
         self.view.addSubview(textField)
         textField.layer.borderWidth = 1
         textField.layer.borderColor = UIColor.black.cgColor
         textField.placeholder = "test"
-        textField.snp.makeConstraints { (make) in
-            make.leading.equalToSuperview().offset(100)
-            make.trailing.equalToSuperview().offset(-100)
-            make.top.equalTo(self.titleLabel.snp.bottom).offset(size)
-            make.centerX.equalTo(self.view)
+        textField.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(100)
+            $0.trailing.equalToSuperview().offset(-100)
+            $0.top.equalTo(self.titleLabel.snp.bottom).offset(size)
+            $0.centerX.equalTo(self.view)
         }
     }
 
