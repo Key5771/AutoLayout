@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let aspect = CGFloat(16.0 / 9.0)
+        
         print("frame: \(self.view.frame)")
         
         self.view.addSubview(box)
@@ -31,7 +33,7 @@ class ViewController: UIViewController {
         titleLabel.text = "로그인"
         titleLabel.textAlignment = .center
         
-        let size = self.view.frame.height * 0.1
+        let size = self.view.frame.height * 0.2
         
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(size)
